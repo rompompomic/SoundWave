@@ -1,0 +1,19 @@
+[build]
+  publish = "dist/public"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  VITE_SANITY_PROJECT_ID = "your-project-id"
+  VITE_SANITY_DATASET = "production"
+
+[context.deploy-preview.environment]
+  VITE_SANITY_PROJECT_ID = "your-project-id"
+  VITE_SANITY_DATASET = "production"
