@@ -1,0 +1,1018 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МузыкаНаЗаказ - Создаем уникальные песни для ваших событий</title>
+    <meta name="description" content="Профессиональное создание песен на заказ: дни рождения, праздники, реклама. Уникальные композиции от талантливых музыкантов.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'deep-black': '#1a1a1a',
+                    'charcoal': '#2a2a2a',
+                    'accent-orange': '#ff6b35',
+                    'soft-gray': '#888888'
+                },
+                fontFamily: {
+                    'inter': ['Inter', 'sans-serif']
+                },
+                animation: {
+                    'fade-in': 'fadeIn 0.5s ease-in-out',
+                    'slide-up': 'slideUp 0.6s ease-out',
+                    'float': 'float 3s ease-in-out infinite'
+                }
+            }
+        }
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .audio-player {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-deep-black text-white font-inter overflow-x-hidden">
+    <!-- @COMPONENT: NavigationHeader -->
+    <header class="fixed top-0 w-full bg-deep-black/90 backdrop-blur-sm z-50 border-b border-charcoal">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-accent-orange" data-bind="site.logo">
+                МузыкаНаЗаказ
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-accent-orange transition-colors">О нас</a>
+                <a href="#pricing" class="hover:text-accent-orange transition-colors">Цены</a>
+                <a href="#portfolio" class="hover:text-accent-orange transition-colors">Портфолио</a>
+                <a href="#services" class="hover:text-accent-orange transition-colors">Услуги</a>
+                <a href="#reviews" class="hover:text-accent-orange transition-colors">Отзывы</a>
+                <a href="#contact" class="hover:text-accent-orange transition-colors">Контакты</a>
+            </div>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
+    <!-- @END_COMPONENT: NavigationHeader -->
+
+    <!-- @COMPONENT: HeroSection -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Video background placeholder -->
+        <div class="absolute inset-0 bg-gradient-to-br from-deep-black via-charcoal to-deep-black"></div>
+        <div class="absolute inset-0 bg-black/50"></div>
+        
+        <!-- Floating musical notes decoration -->
+        <div class="absolute top-20 left-10 text-accent-orange text-4xl animate-float">♪</div>
+        <div class="absolute bottom-20 right-10 text-accent-orange text-3xl animate-float" style="animation-delay: 1s;">♫</div>
+        <div class="absolute top-1/3 right-20 text-accent-orange text-2xl animate-float" style="animation-delay: 2s;">♬</div>
+        
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4 animate-slide-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Создаем уникальные 
+                <span class="text-accent-orange">песни</span> 
+                для ваших событий
+            </h1>
+            <p class="text-xl md:text-2xl text-soft-gray mb-8 max-w-2xl mx-auto">
+                Профессиональные композиции на заказ: дни рождения, праздники, реклама. 
+                Воплощаем ваши эмоции в музыку.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="bg-accent-orange hover:bg-orange-600 px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-music mr-2"></i>
+                    Заказать песню
+                </button>
+                <button class="border border-white hover:bg-white hover:text-deep-black px-8 py-4 rounded-full text-white font-semibold text-lg transition-all duration-300">
+                    <i class="fas fa-play mr-2"></i>
+                    Послушать примеры
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: AboutSection [companyInfo] -->
+    <section id="about" class="py-20 bg-gradient-to-r from-charcoal to-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Кто мы и что делаем</h2>
+                <div class="w-24 h-1 bg-accent-orange mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-semibold text-accent-orange mb-4">Наша миссия</h3>
+                    <p class="text-lg text-soft-gray leading-relaxed">
+                        Мы создаем персональные музыкальные произведения, которые передают ваши чувства и эмоции. 
+                        Каждая песня — это уникальная история, написанная специально для вас.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent-orange mb-2" data-bind="stats.songsCreated">500+</div>
+                            <div class="text-soft-gray">Созданных песен</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent-orange mb-2" data-bind="stats.happyClients">300+</div>
+                            <div class="text-soft-gray">Довольных клиентов</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional photo of the team -->
+                <!-- A group of professional musicians in a modern recording studio -->
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Команда музыкантов в студии" 
+                         class="rounded-2xl shadow-2xl w-full h-auto">
+                    <div class="absolute -bottom-6 -right-6 bg-accent-orange text-white p-4 rounded-full">
+                        <i class="fas fa-music text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- @COMPONENT: PricingSection [pricingPlans] -->
+    <section id="pricing" class="py-20 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Наши тарифы</h2>
+                <div class="w-24 h-1 bg-accent-orange mx-auto mb-8"></div>
+                <p class="text-xl text-soft-gray max-w-2xl mx-auto">
+                    Выберите подходящий план для создания вашей уникальной песни
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- @MAP: pricingPlans.map(plan => ( -->
+                <div class="bg-charcoal rounded-2xl p-8 relative overflow-hidden hover:transform hover:scale-105 transition-all duration-300 border border-transparent hover:border-accent-orange">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-accent-orange/10 rounded-full -mr-10 -mt-10"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4" data-bind="plan.name">Базовый</h3>
+                        <div class="text-4xl font-bold text-accent-orange mb-6">
+                            <span data-bind="plan.price">15,000</span>
+                            <span class="text-lg text-soft-gray">₽</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-orange mr-3"></i>
+                                <span>Песня до 3 минут</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-orange mr-3"></i>
+                                <span>Профессиональная аранжировка</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-orange mr-3"></i>
+                                <span>Текст песни в подарок</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-accent-orange hover:bg-orange-600 py-3 rounded-full font-semibold transition-colors">
+                            Выбрать план
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-accent-orange/20 to-charcoal rounded-2xl p-8 relative overflow-hidden transform scale-105 border-2 border-accent-orange">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-accent-orange text-white px-6 py-2 rounded-full text-sm font-semibold">
+                        Популярный
+                    </div>
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-accent-orange/20 rounded-full -mr-10 -mt-10"></div>
+                    <div class="relative z-10 pt-4">
+                        <h3 class="text-2xl font-bold mb-4" data-bind="plan.name">Стандарт</h3>
+                        <div class="text-4xl font-bold text-accent-orange mb-6">
+                            <span data-bind="plan.price">25,000</span>
+                            <span class="text-lg text-soft-gray">₽</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-orange mr-3"></i>
+                                <span>Песня до 4 минут</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-orange mr-3"></i>
+                                <span>Вокальная партия</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-orange mr-3"></i>
+                                <span>Мастеринг высокого качества</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-orange mr-3"></i>
+                                <span>2 варианта аранжировки</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-accent-orange hover:bg-orange-600 py-3 rounded-full font-semibold transition-colors">
+                            Выбрать план
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-charcoal rounded-2xl p-8 relative overflow-hidden hover:transform hover:scale-105 transition-all duration-300 border border-transparent hover:border-accent-orange">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-accent-orange/10 rounded-full -mr-10 -mt-10"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4" data-bind="plan.name">Премиум</h3>
+                        <div class="text-4xl font-bold text-accent-orange mb-6">
+                            <span data-bind="plan.price">45,000</span>
+                            <span class="text-lg text-soft-gray">₽</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-orange mr-3"></i>
+                                <span>Песня любой длительности</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-orange mr-3"></i>
+                                <span>Живые инструменты</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-orange mr-3"></i>
+                                <span>Видеоклип в подарок</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-accent-orange mr-3"></i>
+                                <span>Неограниченные правки</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-accent-orange hover:bg-orange-600 py-3 rounded-full font-semibold transition-colors">
+                            Выбрать план
+                        </button>
+                    </div>
+                </div>
+                <!-- @END_MAP -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: PricingSection -->
+
+    <!-- @COMPONENT: PortfolioSection [portfolioCategories] -->
+    <section id="portfolio" class="py-20 bg-gradient-to-br from-charcoal to-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Наше портфолио</h2>
+                <div class="w-24 h-1 bg-accent-orange mx-auto mb-8"></div>
+                <p class="text-xl text-soft-gray max-w-2xl mx-auto">
+                    Послушайте примеры наших работ в различных категориях
+                </p>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="bg-accent-orange text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors" data-category="all">
+                    Все категории
+                </button>
+                <button class="bg-charcoal text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-orange transition-colors" data-category="birthday">
+                    День рождения
+                </button>
+                <button class="bg-charcoal text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-orange transition-colors" data-category="march8">
+                    8 марта
+                </button>
+                <button class="bg-charcoal text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-orange transition-colors" data-category="commercial">
+                    Реклама
+                </button>
+                <button class="bg-charcoal text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-orange transition-colors" data-category="gender">
+                    Гендер пути
+                </button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- @MAP: portfolioItems.map(item => ( -->
+                <div class="bg-charcoal rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 portfolio-item" data-category="birthday">
+                    <!-- Musical waveform visualization background -->
+                    <!-- Abstract music waveform pattern -->
+                    <div class="h-48 bg-gradient-to-br from-accent-orange/20 to-charcoal relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
+                             alt="Музыкальная композиция"
+                             class="w-full h-full object-cover opacity-50">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-accent-orange text-white px-3 py-1 rounded-full text-sm font-semibold">День рождения</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3" data-bind="item.title">Песня для Марии</h3>
+                        <p class="text-soft-gray mb-4" data-bind="item.description">Нежная композиция для празднования 25-летия с личными воспоминаниями</p>
+                        
+                        <!-- @FUNCTIONALITY: Audio player component with play/pause controls -->
+                        <div class="audio-player rounded-lg p-4 mb-4">
+                            <div class="flex items-center justify-between">
+                                <button class="bg-accent-orange text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="flex-1 mx-4">
+                                    <div class="w-full bg-deep-black rounded-full h-2">
+                                        <div class="bg-accent-orange h-2 rounded-full w-1/3"></div>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-soft-gray">2:43</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-accent-orange hover:bg-orange-600 py-2 rounded-lg text-white font-semibold transition-colors">
+                            <i class="fas fa-headphones mr-2"></i>
+                            Послушать полную версию
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-charcoal rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 portfolio-item" data-category="march8">
+                    <!-- Elegant spring flowers composition -->
+                    <div class="h-48 bg-gradient-to-br from-pink-500/20 to-charcoal relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1488554378835-f7acf46e6c98?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
+                             alt="Весенние цветы"
+                             class="w-full h-full object-cover opacity-50">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-semibold">8 марта</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Весенний подарок</h3>
+                        <p class="text-soft-gray mb-4">Романтическая композиция для любимой женщины с акцентом на нежность</p>
+                        
+                        <div class="audio-player rounded-lg p-4 mb-4">
+                            <div class="flex items-center justify-between">
+                                <button class="bg-pink-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="flex-1 mx-4">
+                                    <div class="w-full bg-deep-black rounded-full h-2">
+                                        <div class="bg-pink-500 h-2 rounded-full w-2/5"></div>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-soft-gray">3:12</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-pink-500 hover:bg-pink-600 py-2 rounded-lg text-white font-semibold transition-colors">
+                            <i class="fas fa-headphones mr-2"></i>
+                            Послушать полную версию
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-charcoal rounded-2xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 portfolio-item" data-category="commercial">
+                    <!-- Modern advertising concept -->
+                    <div class="h-48 bg-gradient-to-br from-blue-500/20 to-charcoal relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
+                             alt="Рекламная концепция"
+                             class="w-full h-full object-cover opacity-50">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Реклама</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Джингл для IT-компании</h3>
+                        <p class="text-soft-gray mb-4">Современный и запоминающийся джингл для технологической компании</p>
+                        
+                        <div class="audio-player rounded-lg p-4 mb-4">
+                            <div class="flex items-center justify-between">
+                                <button class="bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="flex-1 mx-4">
+                                    <div class="w-full bg-deep-black rounded-full h-2">
+                                        <div class="bg-blue-500 h-2 rounded-full w-1/4"></div>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-soft-gray">0:30</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-blue-500 hover:bg-blue-600 py-2 rounded-lg text-white font-semibold transition-colors">
+                            <i class="fas fa-headphones mr-2"></i>
+                            Послушать полную версию
+                        </button>
+                    </div>
+                </div>
+                <!-- @END_MAP -->
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="bg-accent-orange hover:bg-orange-600 px-8 py-4 rounded-full text-white font-semibold text-lg transition-colors">
+                    <i class="fas fa-folder-open mr-2"></i>
+                    Посмотреть все работы
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: PortfolioSection -->
+
+    <!-- @COMPONENT: ServicesSection [additionalServices] -->
+    <section id="services" class="py-20 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Дополнительные услуги</h2>
+                <div class="w-24 h-1 bg-accent-orange mx-auto mb-8"></div>
+                <p class="text-xl text-soft-gray max-w-2xl mx-auto">
+                    Помимо создания песен, мы предлагаем комплексные решения для вашего бизнеса
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-charcoal to-deep-black rounded-2xl p-8 border border-charcoal hover:border-accent-orange transition-all duration-300">
+                    <div class="text-4xl text-accent-orange mb-6">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Музыкальное производство</h3>
+                    <ul class="space-y-3 text-soft-gray">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent-orange mr-3 mt-1"></i>
+                            <span>Создание песен на заказ для любых событий</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent-orange mr-3 mt-1"></i>
+                            <span>Профессиональная студийная запись</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent-orange mr-3 mt-1"></i>
+                            <span>Сведение и мастеринг композиций</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent-orange mr-3 mt-1"></i>
+                            <span>Написание текстов и аранжировки</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-charcoal to-deep-black rounded-2xl p-8 border border-charcoal hover:border-accent-orange transition-all duration-300">
+                    <div class="text-4xl text-accent-orange mb-6">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Подписка Canva Pro</h3>
+                    <ul class="space-y-3 text-soft-gray">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent-orange mr-3 mt-1"></i>
+                            <span>Премиум доступ к Canva на выгодных условиях</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent-orange mr-3 mt-1"></i>
+                            <span>Создание обложек для ваших композиций</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent-orange mr-3 mt-1"></i>
+                            <span>Дизайн социальных сетей и рекламы</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent-orange mr-3 mt-1"></i>
+                            <span>Консультации по визуальному оформлению</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <span class="text-2xl font-bold text-accent-orange">990₽/мес</span>
+                        <span class="text-soft-gray line-through ml-2">1,500₽/мес</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ServicesSection -->
+
+    <!-- @COMPONENT: PromoSection [currentPromotions] -->
+    <section class="py-20 bg-gradient-to-r from-accent-orange to-orange-600">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Специальное предложение</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Закажите песню до конца месяца и получите скидку 20% + бесплатная консультация по продвижению в соцсетях
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="bg-white text-accent-orange hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-colors">
+                    <i class="fas fa-gift mr-2"></i>
+                    Получить скидку
+                </button>
+                <div class="text-white font-semibold">
+                    <i class="fas fa-clock mr-2"></i>
+                    До конца акции: <span id="countdown" class="font-bold">7 дней</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: PromoSection -->
+
+    <!-- @COMPONENT: ReviewsSection [testimonials] -->
+    <section id="reviews" class="py-20 bg-charcoal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Отзывы наших клиентов</h2>
+                <div class="w-24 h-1 bg-accent-orange mx-auto mb-8"></div>
+                <p class="text-xl text-soft-gray max-w-2xl mx-auto">
+                    Посмотрите, что говорят о нашей работе довольные клиенты
+                </p>
+            </div>
+
+            <!-- Video Reviews Carousel -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-8 text-center">Видео-отзывы</h3>
+                <div class="relative max-w-4xl mx-auto">
+                    <div class="flex overflow-x-auto space-x-6 pb-4" id="video-carousel">
+                        <!-- @MAP: videoTestimonials.map(video => ( -->
+                        <div class="flex-none w-80">
+                            <div class="bg-deep-black rounded-2xl overflow-hidden">
+                                <!-- Happy customer giving video testimonial -->
+                                <div class="relative h-48 bg-gradient-to-br from-accent-orange/20 to-deep-black">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
+                                         alt="Видео-отзыв клиента" 
+                                         class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                                        <button class="bg-white/20 backdrop-blur-sm text-white w-16 h-16 rounded-full flex items-center justify-center hover:bg-white/30 transition-all">
+                                            <i class="fas fa-play text-2xl ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-semibold mb-2" data-bind="video.clientName">Анна Петрова</h4>
+                                    <p class="text-sm text-soft-gray" data-bind="video.description">Песня для свадьбы</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-none w-80">
+                            <div class="bg-deep-black rounded-2xl overflow-hidden">
+                                <!-- Professional businessman testimonial -->
+                                <div class="relative h-48 bg-gradient-to-br from-blue-500/20 to-deep-black">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
+                                         alt="Отзыв бизнес-клиента" 
+                                         class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                                        <button class="bg-white/20 backdrop-blur-sm text-white w-16 h-16 rounded-full flex items-center justify-center hover:bg-white/30 transition-all">
+                                            <i class="fas fa-play text-2xl ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-semibold mb-2">Михаил Кузнецов</h4>
+                                    <p class="text-sm text-soft-gray">Рекламный джингл</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-none w-80">
+                            <div class="bg-deep-black rounded-2xl overflow-hidden">
+                                <!-- Happy young woman with birthday song -->
+                                <div class="relative h-48 bg-gradient-to-br from-pink-500/20 to-deep-black">
+                                    <img src="https://pixabay.com/get/ga8dd95ed5f7a090fc9459257d1c72746e1b0a7f5508496cc0b11abd6169b6a94862336eed41c2afa1b86f3cc9dbcc1f3d318d7a410bd2a03c8e39e1ca9db59db_1280.jpg" 
+                                         alt="Довольная клиентка" 
+                                         class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                                        <button class="bg-white/20 backdrop-blur-sm text-white w-16 h-16 rounded-full flex items-center justify-center hover:bg-white/30 transition-all">
+                                            <i class="fas fa-play text-2xl ml-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <h4 class="font-semibold mb-2">Елена Сидорова</h4>
+                                    <p class="text-sm text-soft-gray">День рождения мамы</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- @END_MAP -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Reviews -->
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-2xl font-semibold mb-8 text-center">Письменные отзывы</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- @MAP: textTestimonials.map(review => ( -->
+                    <div class="bg-deep-black rounded-2xl p-6 border border-charcoal">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-accent-orange text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-soft-gray mb-4 leading-relaxed" data-bind="review.text">
+                            "Заказывали песню для юбилея компании. Результат превзошел все ожидания! 
+                            Команда учла все наши пожелания и создала настоящий шедевр. Рекомендуем!"
+                        </p>
+                        <div class="flex items-center">
+                            <!-- Client profile photo -->
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50" 
+                                 alt="Фото клиента" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <div class="font-semibold" data-bind="review.clientName">Ольга Романова</div>
+                                <div class="text-sm text-soft-gray" data-bind="review.company">ООО "Инновации"</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-deep-black rounded-2xl p-6 border border-charcoal">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-accent-orange text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-soft-gray mb-4 leading-relaxed">
+                            "Потрясающая работа! Создали трогательную песню для нашей свадьбы. 
+                            Гости до сих пор под впечатлением. Профессионализм на высшем уровне!"
+                        </p>
+                        <div class="flex items-center">
+                            <!-- Wedding couple photo -->
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50" 
+                                 alt="Свадебная пара" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <div class="font-semibold">Дмитрий и Анна</div>
+                                <div class="text-sm text-soft-gray">Молодожены</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-deep-black rounded-2xl p-6 border border-charcoal">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-accent-orange text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-soft-gray mb-4 leading-relaxed">
+                            "Заказал песню для мамы на 8 марта. Качество исполнения и эмоциональность 
+                            превзошли ожидания. Мама плакала от счастья!"
+                        </p>
+                        <div class="flex items-center">
+                            <!-- Happy son photo -->
+                            <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50" 
+                                 alt="Довольный сын" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <div class="font-semibold">Александр Попов</div>
+                                <div class="text-sm text-soft-gray">Любящий сын</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-deep-black rounded-2xl p-6 border border-charcoal">
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-accent-orange text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-soft-gray mb-4 leading-relaxed">
+                            "Сотрудничаем уже второй год. Создали несколько рекламных джинглов для наших проектов. 
+                            Всегда точно в срок и с отличным результатом."
+                        </p>
+                        <div class="flex items-center">
+                            <!-- Business woman photo -->
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50" 
+                                 alt="Деловая женщина" 
+                                 class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <div class="font-semibold">Марина Волкова</div>
+                                <div class="text-sm text-soft-gray">Digital-агентство</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- @END_MAP -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ReviewsSection -->
+
+    <!-- @COMPONENT: ContactSection [contactInfo] -->
+    <section id="contact" class="py-20 bg-deep-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Свяжитесь с нами</h2>
+                <div class="w-24 h-1 bg-accent-orange mx-auto mb-8"></div>
+                <p class="text-xl text-soft-gray max-w-2xl mx-auto">
+                    Готовы создать вашу уникальную песню? Выберите удобный способ связи
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <!-- Contact Form -->
+                    <div class="bg-charcoal rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Оставить заявку</h3>
+                        <!-- @FUNCTIONALITY: Contact form with validation -->
+                        <form class="space-y-6" data-implementation="Should validate form fields and submit to backend API">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Ваше имя</label>
+                                <input type="text" class="w-full bg-deep-black border border-soft-gray rounded-lg px-4 py-3 text-white focus:border-accent-orange focus:outline-none transition-colors" placeholder="Введите ваше имя">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Телефон или Email</label>
+                                <input type="text" class="w-full bg-deep-black border border-soft-gray rounded-lg px-4 py-3 text-white focus:border-accent-orange focus:outline-none transition-colors" placeholder="Способ связи с вами">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Тип песни</label>
+                                <select class="w-full bg-deep-black border border-soft-gray rounded-lg px-4 py-3 text-white focus:border-accent-orange focus:outline-none transition-colors">
+                                    <option>День рождения</option>
+                                    <option>8 марта</option>
+                                    <option>Реклама</option>
+                                    <option>Гендер пути</option>
+                                    <option>Другое</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Описание заказа</label>
+                                <textarea class="w-full bg-deep-black border border-soft-gray rounded-lg px-4 py-3 text-white focus:border-accent-orange focus:outline-none transition-colors h-32 resize-none" placeholder="Расскажите подробнее о вашей задаче..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-accent-orange hover:bg-orange-600 py-3 rounded-lg font-semibold transition-colors">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Отправить заявку
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Methods -->
+                    <div class="space-y-6">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-8">Или напишите нам напрямую</h3>
+                        </div>
+
+                        <!-- Social Media Buttons -->
+                        <div class="space-y-4">
+                            <a href="#" class="flex items-center bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 p-4 rounded-2xl transition-all duration-300 transform hover:scale-105">
+                                <i class="fab fa-telegram text-2xl text-white mr-4"></i>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-white">Telegram</div>
+                                    <div class="text-blue-100 text-sm">Быстрые ответы и обсуждение деталей</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </a>
+
+                            <a href="#" class="flex items-center bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 p-4 rounded-2xl transition-all duration-300 transform hover:scale-105">
+                                <i class="fab fa-instagram text-2xl text-white mr-4"></i>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-white">Instagram</div>
+                                    <div class="text-pink-100 text-sm">Смотрите наши работы и пишите в Direct</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </a>
+
+                            <a href="#" class="flex items-center bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 p-4 rounded-2xl transition-all duration-300 transform hover:scale-105">
+                                <i class="fab fa-whatsapp text-2xl text-white mr-4"></i>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-white">WhatsApp</div>
+                                    <div class="text-green-100 text-sm">Голосовые сообщения и файлы</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </a>
+
+                            <a href="#" class="flex items-center bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 p-4 rounded-2xl transition-all duration-300 transform hover:scale-105">
+                                <i class="fas fa-envelope text-2xl text-white mr-4"></i>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-white">Email</div>
+                                    <div class="text-gray-300 text-sm">Подробные технические задания</div>
+                                </div>
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </a>
+                        </div>
+
+                        <div class="bg-charcoal rounded-2xl p-6 mt-8">
+                            <h4 class="font-semibold mb-4 text-center">Время ответа</h4>
+                            <div class="space-y-3 text-sm text-soft-gray">
+                                <div class="flex justify-between">
+                                    <span>Telegram/WhatsApp:</span>
+                                    <span class="text-green-400">В течение часа</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Instagram/Email:</span>
+                                    <span class="text-yellow-400">В течение 3 часов</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Рабочие часы:</span>
+                                    <span class="text-white">10:00 - 22:00 МСК</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-charcoal border-t border-deep-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold text-accent-orange mb-4" data-bind="site.logo">МузыкаНаЗаказ</div>
+                    <p class="text-soft-gray">Создаем уникальные музыкальные произведения, которые передают ваши эмоции и остаются в сердцах навсегда.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Услуги</h4>
+                    <ul class="space-y-2 text-soft-gray">
+                        <li><a href="#" class="hover:text-accent-orange transition-colors">Песни на заказ</a></li>
+                        <li><a href="#" class="hover:text-accent-orange transition-colors">Рекламные джинглы</a></li>
+                        <li><a href="#" class="hover:text-accent-orange transition-colors">Подписка Canva</a></li>
+                        <li><a href="#" class="hover:text-accent-orange transition-colors">Студийная запись</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Категории</h4>
+                    <ul class="space-y-2 text-soft-gray">
+                        <li><a href="#" class="hover:text-accent-orange transition-colors">День рождения</a></li>
+                        <li><a href="#" class="hover:text-accent-orange transition-colors">8 марта</a></li>
+                        <li><a href="#" class="hover:text-accent-orange transition-colors">Свадьбы</a></li>
+                        <li><a href="#" class="hover:text-accent-orange transition-colors">Корпоративы</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Контакты</h4>
+                    <div class="space-y-3 text-soft-gray">
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-accent-orange mr-3"></i>
+                            <span>10:00 - 22:00 МСК</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-accent-orange mr-3"></i>
+                            <span>info@музыканазаказ.ru</span>
+                        </div>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="text-soft-gray hover:text-accent-orange transition-colors">
+                                <i class="fab fa-telegram text-xl"></i>
+                            </a>
+                            <a href="#" class="text-soft-gray hover:text-accent-orange transition-colors">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="text-soft-gray hover:text-accent-orange transition-colors">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-deep-black mt-12 pt-8 text-center text-soft-gray">
+                <p>&copy; 2024 МузыкаНаЗаказ. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Floating Action Button for Quick Order -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <button class="bg-accent-orange hover:bg-orange-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 animate-float">
+            <i class="fas fa-music text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Popup/Modal for Promotions -->
+    <!-- @STATE: showPromoPopup:boolean = false -->
+    <!-- @FUNCTIONALITY: Show promotional popup with timer -->
+    <div id="promo-popup" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-gradient-to-br from-accent-orange to-orange-600 rounded-2xl p-8 max-w-md w-full text-center relative">
+            <button class="absolute top-4 right-4 text-white hover:text-gray-200">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="text-4xl mb-4">🎵</div>
+            <h3 class="text-2xl font-bold text-white mb-4">Специальное предложение!</h3>
+            <p class="text-white/90 mb-6">Скидка 20% на первый заказ + бесплатная консультация</p>
+            <button class="bg-white text-accent-orange hover:bg-gray-100 px-6 py-3 rounded-full font-semibold transition-colors">
+                Получить скидку
+            </button>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Portfolio category filtering
+        const categoryButtons = document.querySelectorAll('[data-category]');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const category = this.dataset.category;
+                
+                // Update active button
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('bg-accent-orange');
+                    btn.classList.add('bg-charcoal');
+                });
+                this.classList.add('bg-accent-orange');
+                this.classList.remove('bg-charcoal');
+                
+                // Filter items
+                portfolioItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Audio player functionality (mockup)
+        document.querySelectorAll('.audio-player button').forEach(button => {
+            button.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-play')) {
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                    // TODO: Implement actual audio playback
+                } else {
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                    // TODO: Implement audio pause
+                }
+            });
+        });
+
+        // Show promotional popup after delay
+        setTimeout(() => {
+            const popup = document.getElementById('promo-popup');
+            if (popup && !localStorage.getItem('promo-shown')) {
+                popup.classList.remove('hidden');
+                localStorage.setItem('promo-shown', 'true');
+            }
+        }, 10000); // Show after 10 seconds
+
+        // Close popup
+        document.querySelector('#promo-popup button').addEventListener('click', function() {
+            document.getElementById('promo-popup').classList.add('hidden');
+        });
+
+        // Mobile menu toggle (placeholder)
+        document.querySelector('.md\\:hidden button').addEventListener('click', function() {
+            // TODO: Implement mobile menu toggle
+            console.log('Mobile menu toggle');
+        });
+
+        // Form submission handling (mockup)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // TODO: Implement form validation and submission to backend API
+            alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.querySelectorAll('section > div').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    })();
+    </script>
+</body>
+</html>
