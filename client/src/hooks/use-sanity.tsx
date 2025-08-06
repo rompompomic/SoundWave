@@ -17,6 +17,5 @@ export function useSanity(queryType: keyof typeof queries) {
     queryFn: () => sanityQuery(queries[queryType]),
     staleTime: 5 * 60 * 1000, // 5 minutes
     retry: false,
-    enabled: false, // Отключаем запросы к Sanity пока не настроен проект
   });
 }

@@ -6,7 +6,7 @@ import { schemaTypes } from './sanity/schema';
 export default defineConfig({
   name: 'default',
   title: 'МузыкаНаЗаказ CMS',
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'your-project-id',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID || '',
   dataset: process.env.SANITY_STUDIO_DATASET || 'production',
   plugins: [structureTool(), visionTool()],
   schema: {
