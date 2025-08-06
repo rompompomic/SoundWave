@@ -31,16 +31,32 @@ npm run dev
 
 ## Настройка Sanity CMS
 
-1. Создайте проект в Sanity Studio
-2. Настройте переменные окружения:
-   - VITE_SANITY_PROJECT_ID
-   - VITE_SANITY_DATASET
-   - VITE_SANITY_TOKEN
+### Шаг 1: Создание проекта Sanity
+```bash
+npx sanity@latest init
+```
 
-3. Запустите Sanity Studio:
+### Шаг 2: Настройка переменных окружения
+Скопируйте `.env.example` в `.env` и заполните:
+```
+VITE_SANITY_PROJECT_ID=ваш-project-id
+VITE_SANITY_DATASET=production
+VITE_SANITY_TOKEN=ваш-токен
+```
+
+### Шаг 3: Создание API токена
+1. Перейдите в https://sanity.io/manage
+2. Выберите ваш проект
+3. Перейдите в API → Tokens
+4. Создайте токен с правами Editor
+
+### Шаг 4: Запуск Sanity Studio
 ```bash
 npx sanity dev
 ```
+
+### Шаг 5: Включение запросов
+В файле `client/src/hooks/use-sanity.tsx` измените `enabled: false` на `enabled: true`
 
 ## Деплой на Netlify
 
